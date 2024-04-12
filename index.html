@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <meta name="author" content="Yaxye Muxamed">
+
+    <meta name="description" content="The Game of Life, also known simply as Life,
+     is not a game in the conventional sense but a cellular automaton 
+     devised by the British mathematician John Horton Conway in 1970.
+      It's a zero-player game, meaning its evolution is determined by its initial state,
+     requiring no further input from human players.
+     The player only interacts with the Game of Life by
+      creating an initial configuration and observing how it evolves.">
+    
+    <!-- Keywords Meta Tag for SEO -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Game of Life">
+
+
+    <title>Game of Life</title>
+    <script type="text/javascript" src="./assetmanager.js"></script>
+    <script type="text/javascript" src="./timer.js"></script>
+    <script type="text/javascript" src="./automata.js"></script>
+    <script type="text/javascript" src="./gameengine.js"></script>
+    <script type="text/javascript" src="./util.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</head>
+<body>
+    <canvas id="gameWorld" width="800" height="600" style="background: white; border: 1px solid black"></canvas>
+    <div>
+        <div id="ticks">Ticks: 0</div>
+        <div id="currentSpeed">Speed: 60</div>
+        <label for="speed">Slow</label>
+        <input type="range" id="speed" min="1" max="120" value="60" step="1" oninput="updateSpeedDisplay()">
+        <label for="speed">Fast</label>
+    </div>
+
+    <script>
+        function updateSpeedDisplay() {
+            let speedValue = document.getElementById("speed").value;
+            document.getElementById('currentSpeed').innerHTML = "Speed: " + speedValue;
+        }
+        updateSpeedDisplay();
+    </script>
+</body>
+</html>
